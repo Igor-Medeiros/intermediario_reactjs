@@ -1,0 +1,83 @@
+                            DESENVOLVIMENTO DE APLICAÇÕES PARA INTERNET COM REACTJS
+
+Trabalhando com estilos em elementos e componentes
+
+            Parte 1 - CSS componentese e elementos
+
+1 - Inline -> basta fazer um const onde cada elemento do CSS deve estar em camelCase.
+        Prós:   
+                Maneira mais pratica e direta
+                Ajustes Rapidos
+                Testes de estilo
+        Contra: 
+                Difícil manutenção
+
+2 - Classes -> Basta definir as classes dentro de um arquivo CSS e importar o CSS dentro do meu componente e depois usar esse importe com o (className=) 
+        Prós:   
+                Maneira mais pratica e direta
+        Contra: 
+                Difícil manutenção
+                Pouca flexibilidade
+                Conflitos com nomes
+
+3 - CSS in JS -> É uma abordagem onde o CSS é criado dentro do proprio JavaScript e o JavaScript gera o CSS para nos.
+
+Comand Line para instalação do styled componentes:
+        npm install --save styled-components 
+
+        Prós: Manutenção
+                Facilidade para remover CSS
+                Estilos dinâmicos
+              Performance
+              Injeção automática de prefixos vendor
+        Contra: 
+                Difícil manutenção
+                Pouca flexibilidade
+                Conflitos com nomes
+
+
+            Parte 2 - Stateful vs Stateless
+
+1 - Stateful -> Um componente usa estados
+    Todo Stateful tem um gerenciamento dentro do componente e geralmente ele é criado po classes em JavaScript.
+
+                Stateful - Ciclo de vida.
+
+    Initialization: 
+        Na inicialização vamos fazer o setup do props, ou seja, o que o componente recebe por
+        parametros que é as propriedades dele, que chamamos no React de (props). E o state que é a inicialização dos estados iniciais do nosso componente.
+
+    Mounting: 
+        componentWillMount que é antes da fazer de render, ja depois de renderizado o compomente  temos  a faze de componentDidMount que podemos controlar algumas coisas por esse componente.
+
+    Updation:
+        Se precisamor alterar algum componente a parti do Updation, podemos usar:
+        Para alterar a props:
+            componentWillReceiveProps -> ShouldComponentUpdate -> componentWillUpdate -> render -> componentDidUpdate
+        Para aletar o state:
+            ShouldComponentUpdate -> componentWillUpdate -> render -> componentDidUpdate
+
+    Unmounting:
+        Podemos destruir um componente com o componentWillUnmount, tirando qualquer coisa que estiver sendo persistida.
+
+
+2 - Stateless -> Um componente não usa estados
+    Não possui gerenciamento de estados no componente e ele é usado construindo funções em JavaScript.
+
+            Parte 3 - Formulários
+
+    Formulários mantém um estado interno.
+    Em HTML, <input>, <textarea> e <select> têm um estado interno.
+    Já em React, podemos controlar o estado, com: 
+        state
+        setState
+
+        Componente controlado
+
+    Tanto select, input ou textarea aceitam um atributo value e podemos mudar esse valor usando o atributo onChange.
+
+        Componente não-controlado
+
+    A tag input é read-only
+
+    biblioteca para Formulário: Formik
